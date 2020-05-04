@@ -21,31 +21,31 @@ for line in sys.stdin:
 
     if DistritoAnt and DistritoAnt != esteDistrito:
         print (DistritoAnt, "\t", Acumulados)
-        DistritoAnt = esteDistrito
         if i == 0:
-            mini[0] = esteDistrito
+            mini[0] = DistritoAnt
             mini[1] = Acumulados
-            maxi[0] = esteDistrito
+            maxi[0] = DistritoAnt
             maxi[1] = Acumulados
             i += 1
         elif Acumulados < mini[1]:
-            mini[0] = esteDistrito
+            mini[0] = DistritoAnt
             mini[1] = Acumulados
         elif Acumulados > maxi[1]:
-            maxi[0] = esteDistrito
+            maxi[0] = DistritoAnt
             maxi[1] = Acumulados
+        DistritoAnt = esteDistrito
         Acumulados = 0
 
     DistritoAnt = esteDistrito
     Acumulados += 1
 
-if DistritoAntAnt != None:
+if DistritoAnt != None:
     print (DistritoAnt, "\t", Acumulados)
-    elif Acumulados < mini[1]:
-        mini[0] = esteDistrito
+    if Acumulados < mini[1]:
+        mini[0] = DistritoAnt
         mini[1] = Acumulados
     elif Acumulados > maxi[1]:
-        maxi[0] = esteDistrito
+        maxi[0] = DistritoAnt
         maxi[1] = Acumulados
 
 print("Distrito con más encuestas","\t",maxi[0])

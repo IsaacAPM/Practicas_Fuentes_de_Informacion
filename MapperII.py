@@ -12,9 +12,9 @@
 import sys
 
 for Line in sys.stdin:
-	Data = Line.strip().split(",")
+    Data = Line.strip().split(",")
 	if len(Data) == 4:
-		hora, genero, distrito, candidato = Data
+        hora, genero, distrito, candidato = Data
 		print ("{0}\t{1}".format(distrito,1))
 
 
