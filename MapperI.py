@@ -8,15 +8,17 @@
       
 import sys 
 
+distri = {}
+
 for Line in sys.stdin:
     Data = Line.strip().split(",")
-    distri = {}
-    
+
     if len(Data) == 4:
         hora, genero, distrito, candidato = Data
         
-        if distro.get(distrito) == None:
+        if distri.get(distrito) == None:
             print("{0}\t{1}".format(distrito,1))
+            distri[distrito] = 1
         else:
             print("{0}\{1}".format(distrito,0))
             
