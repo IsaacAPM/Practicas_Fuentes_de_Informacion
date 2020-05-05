@@ -12,6 +12,7 @@ import sys
 cant = 0
 distritoAnt = None
 candidatoAnt = None
+resp = []
 
 for line in sys.stdin:
     DataIn = line.strip().split("\t")
@@ -22,11 +23,17 @@ for line in sys.stdin:
     esteCandidato, esteDistrito  = DataIn
     
     if distritoAnt and distritoAnt != esteDistrito and candidatoAnt == esteCandidato:
-        print (esteCandidato, "\t", distritoAnt,"\t",cant)
+        text = esteCandidato + "\t" + distritoAnt + "\t" + str(cant)
+        print (text)
+        if (candidatoAnt == "CAND1" and distritoAnt == "1232") or (candidatoAnt == "CAND5" and distritoAnt == "9184"):
+            resp.append(text)
         cant = 0
 
     if candidatoAnt and candidatoAnt != esteCandidato:
-        print (candidatoAnt, "\t", distritoAnt,"\t",cant)
+        text = candidatoAnt + "\t" + distritoAnt + "\t" + str(cant)
+        print (text)
+        if (candidatoAnt == "CAND1" and distritoAnt == "1232") or (candidatoAnt == "CAND5" and distritoAnt == "9184"):
+            resp.append(text)
         candidatoAnt = esteCandidato
         cant = 0
 
@@ -35,5 +42,7 @@ for line in sys.stdin:
     cant += 1
 
 if candidatoAnt != None:
-    print (candidatoAnt, "\t", distritoAnt,"\t",cant)
+    print (text)
+    if (candidatoAnt == "CAND1" and distritoAnt == "1232") or (candidatoAnt == "CAND5" and distritoAnt == "9184"):
+        resp.append(text)
 
