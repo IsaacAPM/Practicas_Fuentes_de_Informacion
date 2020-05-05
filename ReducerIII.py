@@ -42,7 +42,11 @@ for line in sys.stdin:
     cant += 1
 
 if candidatoAnt != None:
+    text = candidatoAnt + "\t" + distritoAnt + "\t" + str(cant)
     print (text)
     if (candidatoAnt == "CAND1" and distritoAnt == "1232") or (candidatoAnt == "CAND5" and distritoAnt == "9184"):
         resp.append(text)
 
+print()
+for i in resp:
+    print(i)
