@@ -14,14 +14,14 @@ for line in sys.stdin:
 
     esteCandidato, esteValor  = DataIn
     
-    if valorAnt and valorAnt != esteValor and candidatoAnt == candidatoAnt:
+    if valorAnt and valorAnt != esteValor and esteCandidato == candidatoAnt:
         text = esteCandidato + "\t" + valorAnt + "\t" + str(Acumulados)
         print(text)
         Acumulados = 0
 
     if candidatoAnt and candidatoAnt != esteCandidato:
         text = candidatoAnt + "\t" + valorAnt + "\t" + str(Acumulados)
-        print (text)
+        print(text)
         candidatoAnt = esteCandidato;
         Acumulados = 0
 
