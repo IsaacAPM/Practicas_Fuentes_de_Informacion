@@ -21,7 +21,7 @@ for line in sys.stdin:
 
     esteCandidato, esteDist  = DataIn
 
-    if not (candiDist.get(esteDist) == None):
+    if (not (candiDist.get(esteDist) == None)) and candidatoAnt == esteCandidato:
         candiDist[esteDist] += 1
     else:
         candiDist[esteDist] = 1
@@ -36,6 +36,6 @@ if candidatoAnt != None:
     resp[candidatoAnt] = candiDist
     candiDist = {}
 
-for candidato,distritos in resp:
-    for distritos,cant in distritos:
+for candidato,distritos in resp.items():
+    for distritos,cant in distritos.items():
         print(candidato,"\t",distritos,"\t",cant)
