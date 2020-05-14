@@ -14,7 +14,7 @@ for Line in sys.stdin:
 	Data = Line.strip().split(",")
 	if len(Data) == 4:
 		hora, genero, distrito, candidato = Data
-        disGen = distrito + genero
-		print ("{0}\t{1}".format(candidato,disGen))
+		disGen = distrito + genero 
+		print("{0}\t{1}".format(disGen,candidato))
 
 

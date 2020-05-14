@@ -23,7 +23,7 @@ for line in sys.stdin:
 
     if (not (candiDist.get(esteDist) == None)) and candidatoAnt == esteCandidato:
         candiDist[esteDist] += 1
-    else:
+    elif candidatoAnt == esteCandidato:
         candiDist[esteDist] = 1
 
     if candidatoAnt and candidatoAnt != esteCandidato:
